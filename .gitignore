@@ -1,1 +1,9 @@
 rockyou.txt
+*.cap
+*.pcap
+*.hccapx
+*.hc22000
+*.pot
+*.csv
+*.netxml
+*.kismet

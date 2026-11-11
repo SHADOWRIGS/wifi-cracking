@@ -12,7 +12,7 @@ __DISCLAIMER: This software/tutorial is for educational purposes only. It should
 
 This tutorial assumes that you:
 
-- Have a general comfortability using the command-line
+- Have a general comfort level using the command-line
 - Are running a debian-based linux distro, preferably [Kali linux](https://www.kali.org/) (OSX users see the [appendix](appendix.md))
 - Have [Aircrack-ng](http://aircrack-ng.org/) installed
 	- `sudo apt-get install aircrack-ng`
@@ -243,6 +243,16 @@ cap2hccapx.bin capture/-01.cap capture/-01.hccapx
 # crack with naive-hashcat
 HASH_FILE=hackme.hccapx POT_FILE=hackme.pot HASH_TYPE=2500 ./naive-hashcat.sh
 ```
+
+## Note on Modern Tools
+
+This tutorial was originally written in 2017 and some of the tools and techniques have evolved:
+
+- **Hashcat hash mode**: The WPA/WPA2 hash mode `2500` (used with `.hccapx` files) has been deprecated in newer versions of hashcat. The modern workflow uses hash mode `22000` with `.hc22000` files. Use [`hcxpcapngtool`](https://github.com/ZerBea/hcxtools) instead of `cap2hccapx` to convert capture files.
+- **`wlandump-ng`** has been superseded by [`hcxdumptool`](https://github.com/ZerBea/hcxdumptool), which is actively maintained and supports modern capture formats.
+- **PMKID attack**: Since 2018, it is possible to crack WPA/WPA2 networks without capturing a full 4-way handshake by using the PMKID-based attack. Tools like `hcxdumptool` and `hcxpcapngtool` support this method natively.
+- **WPA3**: Newer routers may support WPA3 (SAE), which is resistant to offline dictionary attacks. The methods described here apply only to WPA/WPA2-PSK networks.
+- **Monitor mode interface naming**: Modern versions of `airmon-ng` typically create `wlan0mon` instead of `mon0`. Adjust the commands accordingly.
 
 ## Appendix
 

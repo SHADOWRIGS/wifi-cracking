@@ -51,7 +51,7 @@ Thanks again to [@harshpatel991](https://github.com/harshpatel991), as well as [
 
 ## Capturing handshakes with `wlandump-ng`
 
-[@enilfodne](https://github.com/enilfodne) has [informed me](https://github.com/brannondorsey/wifi-cracking/issues/15) that the hashcat community has a prefered tool for capturing WPA 4-way handshakes, called `wlandump-ng`. This tool belongs to a suite of hashcat related utilities called [hcxtools](https://github.com/ZerBea/hcxtools) developed by [ZerBea](https://github.com/ZerBea), and has notable perks over `airdump-ng`. `wlandump-ng` allows you to blanket capture handshakes from every nearby network at once, hopping Wi-Fi channels in order to increase collection.
+[@enilfodne](https://github.com/enilfodne) has [informed me](https://github.com/brannondorsey/wifi-cracking/issues/15) that the hashcat community has a preferred tool for capturing WPA 4-way handshakes, called `wlandump-ng`. This tool belongs to a suite of hashcat related utilities called [hcxtools](https://github.com/ZerBea/hcxtools) developed by [ZerBea](https://github.com/ZerBea), and has notable perks over `airdump-ng`. `wlandump-ng` allows you to blanket capture handshakes from every nearby network at once, hopping Wi-Fi channels in order to increase collection.
 
 
 ```bash
@@ -78,15 +78,15 @@ cap2hccapx.bin capture.cap capture.hccapx
 - `-c 1`: start in the 2.4Ghz range from channel 1 (will go to 13)
 - `-t 60`: stay on each channel for 60s (experiment with lower values, default is `5`)
 - `-d 100`: send deauth every 100 beacon frames
-- `-D 10`: send disassosciation packets every 10 beacons frames
+- `-D 10`: send disassociation packets every 10 beacons frames
 - `-m 512`: internal ringbuffer size, use 512 for low resource machines
 - `-b`: activate beaconing to last 10 probe requests
-- `-r`: reset deauthentication/disassosciation counter if hop loop is on channel 1
+- `-r`: reset deauthentication/disassociation counter if hop loop is on channel 1
 - `-s 20`: display 20 status lines
 
 **WARNING:** Using this is likely illegal in most places. See [here](https://github.com/ZerBea/hcxtools#warning) for more info.
 
-`wlandump-ng` also offers the option to run in passive mode without transmitting any deauth/disassociation frames. This is recommended if you are are sensitive to disrupting the network activity of those around you (which you should be). The trade-off is that you will capture far fewer handshakes, but this method makes the capture undetectable.
+`wlandump-ng` also offers the option to run in passive mode without transmitting any deauth/disassociation frames. This is recommended if you are sensitive to disrupting the network activity of those around you (which you should be). The trade-off is that you will capture far fewer handshakes, but this method makes the capture undetectable.
 
 ```bash
 # run with default settings in passive mode
@@ -142,7 +142,7 @@ crunch 10 10 -t "%%%%%%%%%%" | aircrack-ng -a2 capture.cap -b 58:98:35:CB:A2:77 
 
 Thanks to [@hiteshnayak305](https://github.com/hiteshnayak305) for the introduction to `crunch` and including this update as a [PR](https://github.com/brannondorsey/wifi-cracking/pull/17).
 
-## Protecting your identify with `macchanger`
+## Protecting your identity with `macchanger`
 
 Whenever you are doing anything remotely nefarious with Wi-Fi, it is a good idea to spoof your MAC address of your Wi-Fi device so that any network traffic that gets recorded can't be tied to serial assigned by your device manufacturer.
 
@@ -156,7 +156,7 @@ sudo apt-get install macchanger
 sudo ifconfig wlan0 down
 
 # change the mac
-# -A pics a random MAC w/ a valid vendor
+# -A picks a random MAC w/ a valid vendor
 # -r makes it truly random
 # -p restores it to the original hardware MAC
 sudo macchanger -A wlan0

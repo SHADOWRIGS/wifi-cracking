@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.5
+
+- Add "Note on Modern Tools" section to README covering hashcat mode 22000, hcxdumptool, PMKID attacks, WPA3, and updated interface naming.
+- Fix typos in appendix.md (preferred, disassociation, identity, picks, duplicate "are").
+- Fix typo in README.md (comfortability -> comfort level).
+- Improve .gitignore with common capture and cracking file patterns.
+
 ## 1.4
 
 - Updates to Chinese version by [tiiime](https://github.com/tiiime), [neal1991](https://github.com/neal1991), and [yizhiheng](https://github.com/yizhiheng). 
